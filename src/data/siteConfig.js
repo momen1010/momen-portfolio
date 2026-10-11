@@ -5,12 +5,12 @@ export const siteConfig = {
     tagline: "Building ideas into reality.",
     location: "Egypt",
   
-    // ===== التواصل الحقيقي =====
     email: "memo70931@gmail.com",
+    whatsapp: "201556507666",  
     social: {
       github: "https://github.com/momen1010",
-      linkedin: "https://www.linkedin.com/in/m%C3%B2men-tarek-983242392/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3B5Jb1aM4jQICCSpX648z5IA%3D%3D", // ← اتأكد من الرابط
-     
+      linkedin: "https://www.linkedin.com/in/m%C3%B2men-tarek-983242392/",
+      x: "",
     },
   
     cv: null,

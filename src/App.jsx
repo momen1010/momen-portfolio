@@ -1,11 +1,14 @@
+import { lazy, Suspense } from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
-import AboutSection from "./components/AboutSection";
-import FeaturedProjects from "./components/FeaturedProjects";
-import SkillsSection from "./components/SkillsSection";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
 import SideAnnotations from "./components/SideAnnotations";
+import WhatsAppButton from "./components/WhatsAppButton";
+
+const AboutSection = lazy(() => import("./components/AboutSection"));
+const FeaturedProjects = lazy(() => import("./components/FeaturedProjects"));
+const SkillsSection = lazy(() => import("./components/SkillsSection"));
+const ContactSection = lazy(() => import("./components/ContactSection"));
+const Footer = lazy(() => import("./components/Footer"));
 
 export default function App() {
   return (
@@ -14,12 +17,16 @@ export default function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <AboutSection />
-        <FeaturedProjects />
-        <SkillsSection />
-        <ContactSection />
+        <Suspense fallback={<div className="py-32" />}>
+          <AboutSection />
+          <FeaturedProjects />
+          <SkillsSection />
+          <ContactSection />
+          <Footer />
+        </Suspense>
       </main>
-      <Footer />
+
+      <WhatsAppButton />
     </div>
   );
 }
