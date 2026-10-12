@@ -2,7 +2,7 @@ import { FiArrowRight, FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 import { motion } from "framer-motion";
 import { siteConfig } from "../data/siteConfig";
 import CrownMark from "./CrownMark";
-import MusicIdentityWidget from "./MusicIdentityWidget";
+;
 export default function HeroSection() {
   return (
     <section
@@ -166,7 +166,7 @@ export default function HeroSection() {
 </div>
 <div className="h-px bg-border-muted" />
 
-        <MusicIdentityWidget />
+       
         </motion.div>
       </div>
     </section>

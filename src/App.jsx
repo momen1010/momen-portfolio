@@ -5,6 +5,7 @@ import SideAnnotations from "./components/SideAnnotations";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 const AboutSection = lazy(() => import("./components/AboutSection"));
+const MusicSection = lazy(() => import("./components/MusicSection"));
 const FeaturedProjects = lazy(() => import("./components/FeaturedProjects"));
 const SkillsSection = lazy(() => import("./components/SkillsSection"));
 const ContactSection = lazy(() => import("./components/ContactSection"));
@@ -19,6 +20,7 @@ export default function App() {
         <HeroSection />
         <Suspense fallback={<div className="py-32" />}>
           <AboutSection />
+          <MusicSection />
           <FeaturedProjects />
           <SkillsSection />
           <ContactSection />

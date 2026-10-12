@@ -104,7 +104,7 @@ import {
           >
           <div className="relative aspect-[3/4] bg-bg-secondary border border-border-muted overflow-hidden">
   <img
-    src="/m00.jpeg"
+    src="/m001.jpeg"
     alt="Mo'men Tarek"
     className="w-full h-full object-cover grayscale contrast-110 brightness-90"
     style={{ objectPosition: "center 35%" }}
