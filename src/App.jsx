@@ -374,6 +374,7 @@ function Work() {
             </motion.article>
           ))}
         </div>
+        <MoreWork />
         <motion.p
           variants={fadeUp}
           initial="hidden"
@@ -394,6 +395,111 @@ function Work() {
         </motion.p>
       </div>
     </section>
+  );
+}
+
+const MORE_WORK = [
+  {
+    name: "Kawkab El Sa3ada",
+    description:
+      "A modern cafe website built around product presentation and customer ordering.",
+    stack: ["React", "Node.js", "MongoDB"],
+    image: "/projects/happy.jpg",
+    live: "https://kawkab-app.vercel.app/",
+    repo: "https://github.com/momen1010/kawkab-app",
+  },
+  {
+    name: "Tokyo Restaurant",
+    description:
+      "A restaurant web application with menu and ordering functionality.",
+    stack: ["Next.js", "Firebase", "Tailwind"],
+    image: "/projects/tokyo.jpg",
+    live: "https://tokyo-restaurant-eight.vercel.app/",
+    repo: "https://github.com/momen1010/tokyo-restaurant",
+  },
+  {
+    name: "MO2men-car-s",
+    description:
+      "A responsive web app for displaying and managing car listings.",
+    stack: ["HTML5", "CSS3", "JavaScript"],
+    image: "/projects/car.jpg",
+    live: null,
+    repo: "https://github.com/momen1010/MO2men-car-s",
+  },
+];
+
+function MoreWork() {
+  return (
+    <motion.div
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: "-80px" }}
+      className="mt-24 sm:mt-32"
+    >
+      <p className="eyebrow">Earlier work</p>
+      <h3 className="mt-4 font-display text-3xl font-bold tracking-tight sm:text-4xl">
+        More projects<span className="text-accent">.</span>
+      </h3>
+      <p className="mt-3 max-w-xl text-text-secondary">
+        Client-style sites and learning builds from before Velora.
+      </p>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {MORE_WORK.map((p) => (
+          <div
+            key={p.name}
+            className="card-hover group flex flex-col overflow-hidden rounded-xl border border-border-muted bg-bg-elevated"
+          >
+            <div className="aspect-video overflow-hidden border-b border-border-muted">
+              <img
+                src={p.image}
+                alt={`${p.name} screenshot`}
+                loading="lazy"
+                className="h-full w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+            </div>
+            <div className="flex flex-1 flex-col p-5">
+              <h4 className="font-display text-lg font-bold">{p.name}</h4>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-text-secondary">
+                {p.description}
+              </p>
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {p.stack.map((s) => (
+                  <span
+                    key={s}
+                    className="rounded-full border border-border-muted px-2.5 py-1 text-[11px] text-text-secondary"
+                  >
+                    {s}
+                  </span>
+                ))}
+              </div>
+              <div className="mt-5 flex items-center gap-4">
+                {p.live && (
+                  <a
+                    href={p.live}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-sm font-semibold text-accent transition-colors hover:text-accent-soft"
+                  >
+                    Live site
+                    <ArrowUpRight size={14} />
+                  </a>
+                )}
+                <a
+                  href={p.repo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-text-secondary transition-colors hover:text-text-primary"
+                >
+                  <FaGithub size={15} />
+                  Source
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
   );
 }
 
