@@ -5,27 +5,36 @@ export default {
     extend: {
       colors: {
         bg: {
-          primary: "#0B0B0B",
-          secondary: "#121212",
-          elevated: "#181818",
+          primary: "#0A0A0C",
+          secondary: "#101014",
+          elevated: "#16161C",
         },
         text: {
-          primary: "#F2F0EC",
-          secondary: "#A5A29F",
+          primary: "#F4F2F5",
+          secondary: "#A8A4AE",
         },
-        accent: "#E52532",
+        accent: {
+          DEFAULT: "#F43F5E",
+          soft: "#FB7185",
+          dim: "#BE123C",
+        },
         border: {
-          muted: "#33302F",
+          muted: "#26262E",
         },
       },
       fontFamily: {
-        display: ['"Bebas Neue"', "sans-serif"],
+        display: ['"Space Grotesk"', "sans-serif"],
         body: ['"Space Grotesk"', "sans-serif"],
         mono: ['"IBM Plex Mono"', "monospace"],
       },
-      letterSpacing: {
-        widest: "0.25em",
-        mega: "0.4em",
+      animation: {
+        marquee: "marquee 28s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
     },
   },
