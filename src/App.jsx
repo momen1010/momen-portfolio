@@ -592,15 +592,23 @@ function Footer() {
 }
 
 function WhatsAppFloat() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > window.innerHeight * 0.55);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
   return (
     <motion.a
       href={LINKS.whatsapp}
       target="_blank"
       rel="noreferrer"
       aria-label="Chat on WhatsApp"
-      initial={{ opacity: 0, scale: 0.6 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ delay: 2, duration: 0.5, ease: "backOut" }}
+      initial={false}
+      animate={{ opacity: visible ? 1 : 0, scale: visible ? 1 : 0.6 }}
+      transition={{ duration: 0.4, ease: "backOut" }}
+      style={{ pointerEvents: visible ? "auto" : "none" }}
       className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-accent text-white shadow-[0_8px_30px_rgba(244,63,94,0.45)] transition-transform duration-300 hover:scale-110"
     >
       <MessageCircle size={24} />
