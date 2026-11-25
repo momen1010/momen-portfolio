@@ -191,7 +191,7 @@ function Hero() {
           initial="hidden"
           animate="show"
           custom={5}
-          className="mt-16 grid max-w-2xl grid-cols-3 gap-px overflow-hidden rounded-2xl border border-border-muted bg-border-muted"
+          className="mb-24 mt-16 grid max-w-2xl grid-cols-3 sm:mb-0 gap-px overflow-hidden rounded-2xl border border-border-muted bg-border-muted"
         >
           {[
             ["2", "live products"],
